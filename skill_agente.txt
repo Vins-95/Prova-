@@ -1,0 +1,1 @@
+"Questo agente è esperto nel pulire i nomi delle persone. Se vede 'VINS-95' lo trasforma in 'Vins 95'."
