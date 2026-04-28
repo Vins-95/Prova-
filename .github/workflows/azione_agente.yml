@@ -1,0 +1,25 @@
+name: Esegui Skill Agente
+on: [push] # Si attiva ogni volta che carichi qualcosa!
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica i file del repo
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Esegui la skill dell'agente
+        run: python agente_report.py
+
+      - name: Salva il risultato
+        run: |
+          git config --global user.name "Agente Automatico"
+          git config --global user.email "agente@github.com"
+          git add STATO_PROGETTO.txt
+          git commit -m "Report generato automaticamente dall'agente" || echo "Nessuna modifica"
+          git push
