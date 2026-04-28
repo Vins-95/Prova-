@@ -1,0 +1,4 @@
+REPORT AGENTE VINS
+-------------------
+Nella cartella ci sono 6 file.
+L'agente è configurato e pronto all'azione.
